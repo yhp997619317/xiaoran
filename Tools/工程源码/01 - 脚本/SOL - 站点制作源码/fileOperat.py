@@ -27,7 +27,7 @@ with os.scandir('./NFT Project') as projects:
         chrome.find_element(By.ID, 'dns-name').clear()  # 清空输入框,追加域名名称
         chrome.find_element(By.ID, 'dns-name').send_keys(project.name)
         chrome.find_element(By.ID, 'dns-value').clear()  # 清空输入框,追加域名IP
-        chrome.find_element(By.ID, 'dns-value').send_keys('104.168.142.223')
+        chrome.find_element(By.ID, 'dns-value').send_keys('104.168.234.185')
         chrome.find_element(By.ID, 'dns-ttl').clear()  # 清空输入框,TTL 时间
         chrome.find_element(By.ID, 'dns-ttl').send_keys('60')
         chrome.find_element(By.ID, 'dns-add').click()
