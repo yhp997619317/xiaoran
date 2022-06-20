@@ -70,7 +70,7 @@ with os.scandir('./NFT Project') as NFTProject:
 print('操作已完成，请查看 dist 文件夹下生成的站点项目')
 
 # 开始登录宝塔上传文件
-chrome.execute_script("window.open('http://104.168.234.185:8888/9965368e')")
+chrome.execute_script("window.open('http://104.168.170.89:8888/adcd0b00')")
 chrome.implicitly_wait(20)
 # 遍历标签页 -> 进入标签页 -> 如果符合查找条件则停留在该页面
 for tab in chrome.window_handles:
@@ -79,9 +79,9 @@ for tab in chrome.window_handles:
         break
 # 用户密码登录
 chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(2) > input').send_keys(
-    "1syubtdy")
+    "b4vhmxao")
 chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(3) > input').send_keys(
-    "4683c682")
+    "109b2446")
 chrome.find_element(By.ID, 'login-button').click()
 chrome.implicitly_wait(40)
 
