@@ -94,7 +94,7 @@ chrome.implicitly_wait(40)
 with os.scandir('./NFT Project') as srcs:
     for project in srcs:
         # 点击添加站点
-        hostName = project.name + '.solmintnft.com'
+        hostName = project.name + '.nftsvipmint.com'
         hostName = hostName.lower()
         time.sleep(0.8)
         chrome.find_element(By.XPATH, "//button[@title='添加站点']").click()
