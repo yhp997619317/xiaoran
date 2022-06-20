@@ -10,16 +10,17 @@ from selenium.webdriver.support.ui import Select
 chrome = webdriver.Chrome("chromedriver")
 chrome.get("https://clients.hostwinds.com/cloud/dns-manager.php")
 chrome.implicitly_wait(20)
-selector1 = '#dns_manager-43453 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
+selector1 = '#dns_manager-43575 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
 
 # 用户密码登录
-chrome.find_element(By.ID, 'inputEmail').send_keys("daobiyouxiang@protonmail.com")
+chrome.find_element(By.ID, 'inputEmail').send_keys("jlacoin@protonmail.com")
 chrome.find_element(By.ID, 'inputPassword').send_keys("Qaz123123123..")
 chrome.find_element(By.ID, 'login').click()
 # 域名注册界面跳转
 chrome.implicitly_wait(20)
-chrome.find_element(By.ID, 'dropdown-43453').click()
+chrome.find_element(By.ID, 'dropdown-43575').click()
 chrome.find_element(By.CSS_SELECTOR, selector1).click()
+chrome.implicitly_wait(10)
 # 获取 NFT Project 文件夹下所有项目文件夹名称，用于注册二级域名
 with os.scandir('./NFT Project') as projects:
     for project in projects:
@@ -69,3 +70,58 @@ with os.scandir('./NFT Project') as NFTProject:
             for img in imgs:
                 shutil.copy(img, 'dist/' + project.name + '/img')
 print('操作已完成，请查看 dist 文件夹下生成的站点项目')
+
+# 开始登录宝塔上传文件
+chrome.execute_script("window.open('http://104.168.157.22:8888/5f22e1c1')")
+chrome.implicitly_wait(20)
+# 遍历标签页 -> 进入标签页 -> 如果符合查找条件则停留在该页面
+for tab in chrome.window_handles:
+    chrome.switch_to.window(tab)
+    if 'Com面板' in chrome.title:
+        break
+# 用户密码登录
+chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(2) > input').send_keys(
+    "rurietm7")
+chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(3) > input').send_keys(
+    "34a0b20c")
+chrome.find_element(By.ID, 'login-button').click()
+chrome.implicitly_wait(40)
+
+# 跳转宝塔网站域名绑定界面
+chrome.find_element(By.CSS_SELECTOR, '#memuAsite > a').click()
+chrome.implicitly_wait(40)
+
+with os.scandir('./NFT Project') as srcs:
+    for project in srcs:
+        # 点击添加站点
+        hostName = project.name + '.solmintnft.com'
+        hostName = hostName.lower()
+        time.sleep(0.8)
+        chrome.find_element(By.XPATH, "//button[@title='添加站点']").click()
+        time.sleep(2)
+        chrome.find_element(By.CLASS_NAME, 'inlineBlock').click()  # 获取焦点
+        time.sleep(0.5)
+        chrome.find_element(By.NAME, 'webname').send_keys(hostName)  # 输入域名
+        chrome.find_element(By.CLASS_NAME, 'layui-layer-btn').click()  # 失去焦点
+        chrome.find_element(By.CLASS_NAME, 'layui-layer-btn0').click()  # 确认添加
+        chrome.implicitly_wait(5)
+        time.sleep(3)
+        # # 设置 https
+        # chrome.find_element(By.XPATH, f"//a[@title='{hostName}']").click()
+        # time.sleep(0.8)
+        # chrome.find_element(By.XPATH, "//p[contains(text(),'SSL')]").click()
+        # chrome.implicitly_wait(10)
+        # chrome.find_element(By.CSS_SELECTOR, '#ssl_tabs > span:nth-child(3)').click()
+        # chrome.find_element(By.CSS_SELECTOR, '#ymlist > li > input').click()
+        # chrome.find_element(By.XPATH, "//button[@name='letsApply']").click()  # 确认申请
+        # # 持续检测是否申请成功
+        #
+        # checkOver = chrome.find_element(By.XPATH, "//button[contains(text(),'关闭SSL')]")
+        # while not checkOver:
+        #     checkOver = chrome.find_element(By.XPATH, "//button[contains(text(),'关闭SSL')]")
+        #     print('继续等待 https 申请，直到完成')
+        # time.sleep(1)
+        # chrome.find_element(By.CLASS_NAME, 'btswitch-btn').click()
+        # chrome.implicitly_wait(50)
+        # time.sleep(3)
+        # chrome.find_element(By.CLASS_NAME, 'layui-layer-close').click()
