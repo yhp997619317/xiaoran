@@ -10,16 +10,17 @@ from selenium.webdriver.support.ui import Select
 chrome = webdriver.Chrome("chromedriver")
 chrome.get("https://clients.hostwinds.com/cloud/dns-manager.php")
 chrome.implicitly_wait(20)
-selector1 = '#dns_manager-43463 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
+selector1 = '#dns_manager-43575 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
 
 # 用户密码登录
-chrome.find_element(By.ID, 'inputEmail').send_keys("daobiyouxiang@protonmail.com")
+chrome.find_element(By.ID, 'inputEmail').send_keys("jlacoin@protonmail.com")
 chrome.find_element(By.ID, 'inputPassword').send_keys("Qaz123123123..")
 chrome.find_element(By.ID, 'login').click()
 # 域名注册界面跳转
 chrome.implicitly_wait(20)
-chrome.find_element(By.ID, 'dropdown-43463').click()
+chrome.find_element(By.ID, 'dropdown-43576').click()
 chrome.find_element(By.CSS_SELECTOR, selector1).click()
+chrome.implicitly_wait(10)
 # 获取 NFT Project 文件夹下所有项目文件夹名称，用于注册二级域名
 with os.scandir('./NFT Project') as projects:
     for project in projects:
@@ -27,7 +28,7 @@ with os.scandir('./NFT Project') as projects:
         chrome.find_element(By.ID, 'dns-name').clear()  # 清空输入框,追加域名名称
         chrome.find_element(By.ID, 'dns-name').send_keys(project.name.lower())
         chrome.find_element(By.ID, 'dns-value').clear()  # 清空输入框,追加域名IP
-        chrome.find_element(By.ID, 'dns-value').send_keys('104.168.234.185')
+        chrome.find_element(By.ID, 'dns-value').send_keys('104.168.170.89')
         chrome.find_element(By.ID, 'dns-ttl').clear()  # 清空输入框,TTL 时间
         chrome.find_element(By.ID, 'dns-ttl').send_keys('60')
         chrome.find_element(By.ID, 'dns-add').click()
