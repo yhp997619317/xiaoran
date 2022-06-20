@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import Select
 chrome = webdriver.Chrome("chromedriver")
 chrome.get("https://clients.hostwinds.com/cloud/dns-manager.php")
 chrome.implicitly_wait(20)
-selector1 = '#dns_manager-43575 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
+selector1 = '#dns_manager-43576 > td:nth-child(5) > div.dropdown.open > ul > li:nth-child(1)'  # 点击跳转子路由新增页面
 
 # 用户密码登录
 chrome.find_element(By.ID, 'inputEmail').send_keys("jlacoin@protonmail.com")
