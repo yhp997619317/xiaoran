@@ -83,7 +83,7 @@ for tab in chrome.window_handles:
 chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(2) > input').send_keys(
     "rurietm7")
 chrome.find_element(By.CSS_SELECTOR, 'body > div > div > div.account > form > div:nth-child(3) > input').send_keys(
-    "34a0b20c")
+        "34a0b20c")
 chrome.find_element(By.ID, 'login-button').click()
 chrome.implicitly_wait(40)
 
