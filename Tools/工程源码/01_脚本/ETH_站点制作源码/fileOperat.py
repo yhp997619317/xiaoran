@@ -97,6 +97,7 @@ chrome.implicitly_wait(40)
 # 跳转宝塔网站域名绑定界面
 chrome.find_element(By.CSS_SELECTOR, '#memuAsite > a').click()
 chrome.implicitly_wait(40)
+time.sleep(2)
 # 设置站点、Https
 with os.scandir('./NFT Project') as srcs:
     for project in srcs:
