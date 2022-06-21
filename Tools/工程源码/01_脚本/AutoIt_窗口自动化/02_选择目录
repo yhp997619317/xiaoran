@@ -1,0 +1,21 @@
+;智能等待，直到桌面出现 class 为 #32770 的弹窗
+WinWait("[CLASS:#32770]","",10);
+;找到名为‘选择要上传的文件夹’的弹窗，对其内部名为 Edit1 的输入控件设置聚焦
+ControlFocus("选择要上传的文件夹","text","Edit1");
+;设置打开文件夹的路径
+ControlSetText("选择要上传的文件夹","","Edit1",$CmdLine[1]);
+;Sleep(500);
+;点击打开按钮
+;ControlClick("选择要上传的文件夹","","Button1");
+;Sleep(300);
+;ControlClick("选择要上传的文件夹","","DirectUIHWND2");
+;Sleep(300);
+;全选
+;WinActivate("选择要上传的文件夹");激活窗口，否则全选组合键无法定位到窗口内文件
+;Send("^a");
+;松开
+;Send("{A up}");
+;Send("{LCTRL up}");
+Sleep(2000);
+ControlClick("选择要上传的文件夹","","Button1");
+Sleep(500);

@@ -7,6 +7,8 @@ from selenium.webdriver.support.ui import Select
 
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 # 批量注册子域名
 # 初始化
@@ -150,14 +152,13 @@ with os.scandir('./dist') as projects:
         chrome.find_element(By.CLASS_NAME, "dropdown-toggle").click()
         time.sleep(0.5)
         chrome.find_element(By.XPATH, "//a[contains(text(),'上传目录')]").click()
-        command = "autoSelect.exe" + " " + f"{os.path.abspath(project.path)}"
+        command = "autoSelect.exe" + " " f"{os.path.abspath(project.path)}"
+        print(command)
         os.system(command)
-        time.sleep(3)
+        time.sleep(8)
+        wait = WebDriverWait(chrome, 10)
         wait.until(EC.alert_is_present())
-        confirm = chrome.switch_to.alert
-        # confirm = Alert(chrome)
-        time.sleep(0.5)
-        confirm.accept()
+        chrome.switch_to.alert.accept()
         time.sleep(0.5)
         chrome.find_element(By.XPATH, "//a[contains(text(),'开始上传')]").click()
         chrome.implicitly_wait(40)
