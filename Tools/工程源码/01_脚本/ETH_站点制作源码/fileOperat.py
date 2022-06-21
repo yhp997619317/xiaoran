@@ -5,6 +5,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support import expected_conditions as EC
+
 # 批量注册子域名
 # 初始化
 
@@ -143,10 +146,25 @@ with os.scandir('./dist') as projects:
         time.sleep(1.5)
         chrome.find_element(By.XPATH, "//*[@id='container']/div[2]/div[2]/div[2]/div[1]/div/span").click()
         time.sleep(2)
-        chrome.find_element(By.CLASS_NAME, "upload_file_btn").click()
+        # chrome.find_element(By.CLASS_NAME, "upload_file_btn").click()
+        chrome.find_element(By.CLASS_NAME, "dropdown-toggle").click()
+        time.sleep(0.5)
+        chrome.find_element(By.XPATH, "//a[contains(text(),'上传目录')]").click()
         command = "autoSelect.exe" + " " + f"{os.path.abspath(project.path)}"
         os.system(command)
-        time.sleep(6)
-        chrome.find_element(By.CLASS_NAME, "layui-layer-min").click()
+        time.sleep(3)
+        wait.until(EC.alert_is_present())
+        confirm = chrome.switch_to.alert
+        # confirm = Alert(chrome)
+        time.sleep(0.5)
+        confirm.accept()
+        time.sleep(0.5)
+        chrome.find_element(By.XPATH, "//a[contains(text(),'开始上传')]").click()
+        chrome.implicitly_wait(40)
+        while not chrome.find_element(By.CLASS_NAME, "ico-tips-close"):
+            time.sleep(2)
+            chrome.implicitly_wait(20)
+            print('继续等待上传，直到完成')
+        # chrome.find_element(By.CLASS_NAME, "layui-layer-min").click()
         chrome.find_element(By.CLASS_NAME, "file_path_upper").click()
         print(os.path.abspath(project.path))
