@@ -154,10 +154,11 @@ with os.scandir('./dist') as projects:
         chrome.find_element(By.XPATH, "//a[contains(text(),'上传目录')]").click()
         command = "autoSelect.exe" + " " f"{os.path.abspath(project.path)}"
         os.system(command)
-        time.sleep(6)
+        time.sleep(4.5)
         chrome.find_element(By.XPATH, "//a[contains(text(),'开始上传')]").click()
         WebDriverWait(chrome, 120).until(EC.presence_of_element_located((By.CLASS_NAME, "ico-tips-close")))
         # chrome.find_element(By.CLASS_NAME, "layui-layer-min").click() # 最小化上传弹窗
         chrome.find_element(By.CLASS_NAME, "layui-layer-close").click() # 关闭上传弹窗
-        time.sleep(0.8)
+        time.sleep(1)
         chrome.find_element(By.CLASS_NAME, "file_path_upper").click()
+        time.sleep(1)
