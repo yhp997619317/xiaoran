@@ -12,7 +12,6 @@ from selenium.common.exceptions import TimeoutException
 
 # 批量注册子域名
 # 初始化
-
 chrome = webdriver.Chrome("chromedriver")
 chrome.get("https://clients.hostwinds.com/cloud/dns-manager.php")
 chrome.implicitly_wait(20)
@@ -38,7 +37,6 @@ with os.scandir('./NFT Project') as projects:
         chrome.find_element(By.ID, 'dns-ttl').clear()  # 清空输入框,TTL 时间
         chrome.find_element(By.ID, 'dns-ttl').send_keys('60')
         chrome.find_element(By.ID, 'dns-add').click()
-
 
 # 批量生成站点文件站点文件
 filterText = 'wsdc'  # 需要替换的关键字
@@ -129,7 +127,8 @@ with os.scandir('./NFT Project') as srcs:
         # 持续检测是否申请成功
         # chrome.implicitly_wait(20)
         time.sleep(1)
-        WebDriverWait(chrome, 120).until(EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'关闭SSL')]")))
+        WebDriverWait(chrome, 120).until(
+            EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'关闭SSL')]")))
         time.sleep(2)
         chrome.find_element(By.CLASS_NAME, 'btswitch-btn').click()
         chrome.implicitly_wait(50)
@@ -158,7 +157,7 @@ with os.scandir('./dist') as projects:
         chrome.find_element(By.XPATH, "//a[contains(text(),'开始上传')]").click()
         WebDriverWait(chrome, 120).until(EC.presence_of_element_located((By.CLASS_NAME, "ico-tips-close")))
         # chrome.find_element(By.CLASS_NAME, "layui-layer-min").click() # 最小化上传弹窗
-        chrome.find_element(By.CLASS_NAME, "layui-layer-close").click() # 关闭上传弹窗
+        chrome.find_element(By.CLASS_NAME, "layui-layer-close").click()  # 关闭上传弹窗
         time.sleep(1)
         chrome.find_element(By.CLASS_NAME, "file_path_upper").click()
         time.sleep(1)

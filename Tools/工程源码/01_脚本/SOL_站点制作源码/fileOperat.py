@@ -5,6 +5,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+
 # 批量注册子域名
 # 初始化
 chrome = webdriver.Chrome("chromedriver")
@@ -88,7 +93,7 @@ chrome.implicitly_wait(40)
 # 跳转宝塔网站域名绑定界面
 chrome.find_element(By.CSS_SELECTOR, '#memuAsite > a').click()
 chrome.implicitly_wait(40)
-
+time.sleep(2)
 with os.scandir('./NFT Project') as srcs:
     for project in srcs:
         # 点击添加站点
@@ -104,22 +109,52 @@ with os.scandir('./NFT Project') as srcs:
         chrome.find_element(By.CLASS_NAME, 'layui-layer-btn0').click()  # 确认添加
         chrome.implicitly_wait(5)
         time.sleep(3)
-        # # 设置 https
-        # chrome.find_element(By.XPATH, f"//a[@title='{hostName}']").click()
-        # time.sleep(0.8)
-        # chrome.find_element(By.XPATH, "//p[contains(text(),'SSL')]").click()
-        # chrome.implicitly_wait(10)
-        # chrome.find_element(By.CSS_SELECTOR, '#ssl_tabs > span:nth-child(3)').click()
-        # chrome.find_element(By.CSS_SELECTOR, '#ymlist > li > input').click()
-        # chrome.find_element(By.XPATH, "//button[@name='letsApply']").click()  # 确认申请
-        # # 持续检测是否申请成功
-        #
-        # checkOver = chrome.find_element(By.XPATH, "//button[contains(text(),'关闭SSL')]")
-        # while not checkOver:
-        #     checkOver = chrome.find_element(By.XPATH, "//button[contains(text(),'关闭SSL')]")
-        #     print('继续等待 https 申请，直到完成')
-        # time.sleep(1)
-        # chrome.find_element(By.CLASS_NAME, 'btswitch-btn').click()
-        # chrome.implicitly_wait(50)
-        # time.sleep(3)
-        # chrome.find_element(By.CLASS_NAME, 'layui-layer-close').click()
+        # 设置 https
+        chrome.find_element(By.XPATH, f"//a[@title='{hostName}']").click()
+        time.sleep(0.8)
+        chrome.find_element(By.XPATH, "//p[contains(text(),'SSL')]").click()
+        chrome.implicitly_wait(10)
+        time.sleep(2)
+        chrome.find_element(By.CSS_SELECTOR, '#ssl_tabs > span:nth-child(3)').click()
+        chrome.implicitly_wait(10)
+        time.sleep(2)
+        chrome.find_element(By.CSS_SELECTOR, '#ymlist > li > input').click()
+        time.sleep(0.3)
+        chrome.find_element(By.XPATH, "//button[@name='letsApply']").click()  # 确认申请
+        # 持续检测是否申请成功
+        # chrome.implicitly_wait(20)
+        time.sleep(1)
+        WebDriverWait(chrome, 120).until(
+            EC.presence_of_element_located((By.XPATH, "//button[contains(text(),'关闭SSL')]")))
+        time.sleep(2)
+        chrome.find_element(By.CLASS_NAME, 'btswitch-btn').click()
+        chrome.implicitly_wait(50)
+        time.sleep(3)
+        chrome.find_element(By.CLASS_NAME, 'layui-layer-close').click()
+
+# 上传文件
+chrome.find_element(By.XPATH, '//*[@id="memuAfiles"]/a').click()
+chrome.implicitly_wait(40)
+with os.scandir('./dist') as projects:
+    for project in projects:
+        hostName = project.name + '.solmintnft.com'
+        hostName = hostName.lower()
+        chrome.find_element(By.XPATH, f"//i[contains(text(),'{hostName}')]").click()
+        chrome.implicitly_wait(5)
+        time.sleep(1.5)
+        chrome.find_element(By.XPATH, "//*[@id='container']/div[2]/div[2]/div[2]/div[1]/div/span").click()
+        time.sleep(2)
+        # chrome.find_element(By.CLASS_NAME, "upload_file_btn").click()
+        chrome.find_element(By.CLASS_NAME, "dropdown-toggle").click()
+        time.sleep(0.5)
+        chrome.find_element(By.XPATH, "//a[contains(text(),'上传目录')]").click()
+        command = "autoSelect.exe" + " " f"{os.path.abspath(project.path)}"
+        os.system(command)
+        time.sleep(4.5)
+        chrome.find_element(By.XPATH, "//a[contains(text(),'开始上传')]").click()
+        WebDriverWait(chrome, 120).until(EC.presence_of_element_located((By.CLASS_NAME, "ico-tips-close")))
+        # chrome.find_element(By.CLASS_NAME, "layui-layer-min").click() # 最小化上传弹窗
+        chrome.find_element(By.CLASS_NAME, "layui-layer-close").click()  # 关闭上传弹窗
+        time.sleep(1)
+        chrome.find_element(By.CLASS_NAME, "file_path_upper").click()
+        time.sleep(1)
