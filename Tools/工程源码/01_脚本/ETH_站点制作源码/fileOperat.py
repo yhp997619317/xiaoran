@@ -138,6 +138,9 @@ with os.scandir('./NFT Project') as srcs:
 # 上传文件
 chrome.find_element(By.XPATH, '//*[@id="memuAfiles"]/a').click()
 chrome.implicitly_wait(40)
+time.sleep(1)
+chrome.find_element(By.XPATH, "//*[@id='container']/div[2]/div[2]/div[3]/div[1]/div/div[8]").click()
+time.sleep(1.5)
 with os.scandir('./dist') as projects:
     for project in projects:
         hostName = project.name + '.nftsvipmint.com'
