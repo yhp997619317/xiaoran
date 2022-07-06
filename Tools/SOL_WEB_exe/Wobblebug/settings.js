@@ -1,11 +1,11 @@
 
 const collectionInfo = {
-    name: "Wobblebug",
+    name: "Susanoo",
     title: "{name}", 
     date: "08.03.2022",
     socialMedia: {
-        discord: "https://t.co/Q7bl6XL8GY",
-        twitter: "https://twitter.com/Wobblebug",
+        discord: "https://discord.com/invite/susanoo",
+        twitter: "https://twitter.com/Susanoo50",
     },
     medias: {
         preview: "gif.gif",
@@ -19,7 +19,7 @@ const collectionInfo = {
     }
 }
 const mintInfo = {
-    price: 0.5,
+    price: 1,
     totalSupply: 100,
 	toFixed: 1,
     minUnits: 1,
@@ -29,7 +29,7 @@ const mintInfo = {
 
 const nftsInfo = {
     active: true,
-    minValue: 0.3,
+    minValue: 0.0003,
     maxTransfer: 2,
 }
 
