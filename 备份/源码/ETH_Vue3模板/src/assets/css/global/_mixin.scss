@@ -1,0 +1,9 @@
+/*  全局 mixin
+------------------------------------------------ */
+// flex 布局
+@mixin flex($dire: row, $just: center, $align: center) {
+  display: flex;
+  flex-direction: $dire;
+  justify-content: $just;
+  align-items: $align;
+}

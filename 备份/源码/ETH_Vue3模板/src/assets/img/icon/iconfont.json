@@ -1,0 +1,86 @@
+{
+  "id": "2405275",
+  "name": "个人练习",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12582575",
+      "name": "闪电",
+      "font_class": "shandian",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "26339476",
+      "name": "登陆 以太坊",
+      "font_class": "yitaifang",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "6050685",
+      "name": "jia",
+      "font_class": "jia",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "6050686",
+      "name": "jian",
+      "font_class": "jian",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "12579551",
+      "name": "twitter",
+      "font_class": "twitter",
+      "unicode": "e79b",
+      "unicode_decimal": 59291
+    },
+    {
+      "icon_id": "27365027",
+      "name": "discord",
+      "font_class": "discord",
+      "unicode": "ebf8",
+      "unicode_decimal": 60408
+    },
+    {
+      "icon_id": "7380660",
+      "name": "elementui",
+      "font_class": "elementui",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7936061",
+      "name": "db_mgdb_router",
+      "font_class": "db_mgdb_router",
+      "unicode": "e79c",
+      "unicode_decimal": 59292
+    },
+    {
+      "icon_id": "13304145",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "16020747",
+      "name": "折叠2",
+      "font_class": "zhedie2",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "16020767",
+      "name": "折叠1",
+      "font_class": "zhedie1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    }
+  ]
+}
