@@ -346,11 +346,15 @@ const getMobileOperatingSystem = () => {
         <div class="right-content">
           <div class="right-content-top">
             <TransitionGroup>
+<!--              <img-->
+<!--                v-for="(e, i) in imgs"-->
+<!--                :key="i"-->
+<!--                :src="e"-->
+<!--                v-show="Ailoverse == i + 1"-->
+<!--                alt=""-->
+<!--              />-->
               <img
-                v-for="(e, i) in imgs"
-                :key="i"
-                :src="e"
-                v-show="Ailoverse == i + 1"
+                src="../public/img/slide.gif"
                 alt=""
               />
             </TransitionGroup>
