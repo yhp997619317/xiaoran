@@ -1,0 +1,68 @@
+/**
+ * Vant3 组件按需注册
+ */
+import {
+	Button,
+	Loading,
+	Overlay,
+	Field,
+	ConfigProvider,
+	Divider,
+	Uploader,
+	Cell,
+	CellGroup,
+	Tabbar,
+	TabbarItem,
+	ActionSheet,
+	NavBar,
+	List,
+	PullRefresh,
+	Search,
+	Collapse,
+	CollapseItem,
+	Popup,
+	Switch,
+	RadioGroup,
+	Radio,
+	Swipe,
+	SwipeItem,
+	Badge,
+	DropdownMenu,
+	DropdownItem,
+	Picker,
+	Step,
+	Steps,
+} from 'vant'
+
+export default (app) => {
+	app.use(Button)
+	app.use(Loading)
+	app.use(Overlay)
+	app.use(Field)
+	app.use(ConfigProvider)
+	app.use(Divider)
+	app.use(Uploader)
+	app.use(Cell)
+	app.use(CellGroup)
+	app.use(Tabbar)
+	app.use(TabbarItem)
+	app.use(ActionSheet)
+	app.use(NavBar)
+	app.use(List)
+	app.use(PullRefresh)
+	app.use(Search)
+	app.use(Collapse)
+	app.use(CollapseItem)
+	app.use(Popup)
+	app.use(Switch)
+	app.use(Radio)
+	app.use(RadioGroup)
+	app.use(Swipe)
+	app.use(SwipeItem)
+	app.use(Badge)
+	app.use(DropdownMenu)
+	app.use(DropdownItem)
+	app.use(Picker)
+	app.use(Step)
+	app.use(Steps)
+}
