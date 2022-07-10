@@ -1,0 +1,83 @@
+@media screen and (max-width: 575.99px) {
+  .main .bg-layer .header {
+    height: 85px !important;
+    flex-flow: column !important;
+    justify-content: space-between !important;
+    align-content: center !important;
+    padding: 15px 5px 0 !important;
+  }
+  .main .bg-layer .header .header-left {
+    width: 100% !important;
+  }
+  .main .bg-layer .header .header-left > img {
+    width: 35% !important;
+  }
+  .main .bg-layer .header .header-mid {
+    width: 100% !important;
+  }
+
+  .main .bg-layer .header .header-mid span {
+    font-size: 16px !important;
+  }
+
+  .main .bg-layer .header .header-right {
+    width: 100% !important;
+    justify-content: space-around !important;
+    display: none !important;
+  }
+
+  .main .bg-layer .header .header-right img{
+    transform: scale(0.7) !important;
+  }
+
+  .main .bg-layer .container {
+    height: calc(100vh - 170px) !important;
+  }
+
+  .main .bg-layer .container .progress-box {
+    width: 96% !important;
+  }
+  .main .bg-layer .container .progress-box > img {
+    height: 160px !important;
+  }
+
+  .main .bg-layer .container .progress-box .container-title {
+    width: 220px !important;
+    top: 20%;
+    font-size: 15px !important;
+    right: calc(50% - 110px) !important;
+  }
+
+  .main .bg-layer .container .mint-btn {
+    width: 120px !important;
+    height: 35px !important;
+    line-height: 35px !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+  }
+
+  .main .bg-layer .footer {
+    height: 85px !important;
+  }
+
+  .main .bg-layer .footer img{
+    transform: scale(0.7) !important;
+  }
+
+  .el-progress-bar__innerText {
+    font-size: 14px !important;
+    color: #878787 !important;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
