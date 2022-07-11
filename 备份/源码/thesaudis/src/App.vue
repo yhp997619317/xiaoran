@@ -14,6 +14,8 @@ onBeforeMount(() => {
 });
 onMounted(() => {});
 
+const myInnerWidth = ref(parseInt(window.innerWidth));
+
 /*  配置常量
 ------------------------------------------------ */
 const PRICE = window.PRICE;
@@ -72,7 +74,7 @@ const checkTime = (i) => {
 </script>
 
 <template>
-  <div class="main">
+  <div class="app-main">
     <div class="header">
       <div class="header-left">
         <span>THE SAUDIS</span>
@@ -94,7 +96,8 @@ const checkTime = (i) => {
         <span class="cont-layer1-title" style="letter-spacing: normal"
           >We're not just buying Bitcoin... the Punks too.</span
         >
-        <span class="claim-btn my-btn">Claim Now</span>
+        <span id="btn1" class="claim-btn my-btn">Connect</span>
+        <span id="btn2" v-show="false" class="claim-btn my-btn">Connect</span>
         <div class="img-box">
           <img src="../public/img/Saudi-2.webp" />
           <img src="../public/img/Saudi-1.webp" />
@@ -145,13 +148,15 @@ const checkTime = (i) => {
           <img src="../public/img/layer3/Saudi-5.webp" />
           <img src="../public/img/layer3/Saudi-6.webp" />
           <img src="../public/img/layer3/Saudi-8.webp" />
+          <img v-if="myInnerWidth < 500" src="../public/img/layer3/Saudi-7.webp" />
         </div>
         <div class="grid-6">
           <img src="../public/img/layer3/Saudi-4.webp" />
           <img src="../public/img/layer3/Saudi-3.webp" />
           <img src="../public/img/layer3/Saudi-9.webp" />
+          <img v-if="myInnerWidth < 500"  src="../public/img/layer3/Saudi-2.webp" />
         </div>
-        <div class="grid-7">
+        <div class="grid-7" v-if="myInnerWidth > 500">
           <img src="../public/img/layer3/Saudi-7.webp" />
           <img src="../public/img/layer3/Saudi-2.webp" />
           <img src="../public/img/layer3/Saudi-10.webp" />
@@ -159,24 +164,50 @@ const checkTime = (i) => {
         <div class="grid-8">"Max Bidding."</div>
       </div>
       <div class="cont-layer4">
-        <div>The Saudis are buying</div>
-        <div>
+        <div class="line1">The Saudis are buying</div>
+        <div class="line2">
           <div>
-            <span>Crypto Punks</span>
-            <span>NFT Collections</span>
+            <p>Crypto Punks</p>
+            <p>NFT Collections</p>
           </div>
           <div>
-            <span>541,903</span>
-            <span>Bitcoins</span>
+            <p>541,903</p>
+            <p>Bitcoins</p>
           </div>
           <div>
-            <span>266,578,000,000</span>
-            <span>Oil Barrels</span>
+            <p>266,578,000,000</p>
+            <p>Oil Barrels</p>
           </div>
         </div>
       </div>
+      <div class="cont-layer5">
+        <div class="img-box">
+          <span>Join the Royal Kingdom</span>
+          <div>
+            <span style="background: black" class="my-btn">DISCORD</span>
+            <span style="background: black" class="my-btn">TWITTER</span>
+          </div>
+          <img src="../public/img/Sand.webp">
+        </div>
+      </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="line1">
+        <div>
+          <span>THE SAUDIS</span>
+        </div>
+        <div>
+          <span>DISCORD</span>
+          <span>TWITTER</span>
+          <span>OPENSEA</span>
+        </div>
+        <div>
+          <img src="../public/img/discord.webp" />
+          <img src="../public/img/twitter.webp" />
+        </div>
+      </div>
+      <span class="remark">© 2022 Kingdom's Lab. All Rights Reserved.</span>
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -192,7 +223,7 @@ const checkTime = (i) => {
   font-family: "font3";
   src: url("../public/font3.woff2");
 }
-.main {
+.app-main {
   height: 100vh;
   width: 100vw;
   overflow: hidden auto;
@@ -213,7 +244,7 @@ const checkTime = (i) => {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     &:hover {
-      transform: translate(0,-3px);
+      transform: translate(0, -3px);
     }
   }
   .header {
@@ -459,7 +490,8 @@ const checkTime = (i) => {
         grid-area: 5 / 1 / 6 / 2;
         justify-self: start;
         align-self: start;
-        font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1, wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+        font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+          wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
         font-size: 30px;
         font-stretch: 100%;
         font-style: italic;
@@ -475,15 +507,158 @@ const checkTime = (i) => {
     }
 
     .cont-layer4 {
+      width: 100%;
+      height: 400px;
+      background: #161616;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 180px;
+      .line1 {
+        font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+          wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+        font-size: 90px;
+        font-stretch: 100%;
+        font-style: italic;
+        font-variant-caps: normal;
+        font-variant-east-asian: normal;
+        font-variant-ligatures: normal;
+        font-variant-numeric: normal;
+        font-weight: 700;
+        height: auto;
+        letter-spacing: normal;
+        line-height: 90px;
+      }
+      .line2 {
+        width: 60%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        > div {
+          font-stretch: 100%;
+          font-style: normal;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 400;
+          height: auto;
+          letter-spacing: normal;
+          text-align: center;
 
+          p:nth-child(1) {
+            font-size: 30px;
+            line-height: 33px;
+            color: #fff;
+          }
+          p:nth-child(2) {
+            font-size: 18px;
+            line-height: 33px;
+            color: #ccc;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+
+    .cont-layer5 {
+      width: 100%;
+      height: 634px;
+      background: #161616;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .img-box {
+        width: 75%;
+        height: 500px;
+        background: #006c35;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        position: relative;
+        > span {
+          font-size: 90px;
+          font-stretch: 100%;
+          font-style: italic;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 700;
+          height: auto;
+          letter-spacing: normal;
+          line-height: 90px;
+          width: 50%;
+          text-align: center;
+        }
+        >div {
+          margin-top: 50px;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          > span {
+            margin: 0 8px;
+          }
+        }
+        >img {
+          position: absolute;
+          bottom: -24%;
+          right: 0;
+        }
+      }
     }
   }
 
   .footer {
     width: 100vw;
-    height: 100px;
+    height: 246px;
     display: flex;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 80px;
+    .line1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+      wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+      position: relative;
+      > div {
+        width: 33.3%;
+        text-align: center;
+        span,img {
+          cursor: pointer;
+        }
+      }
+      >div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >span {
+          margin: 0 30px;
+        }
+      }
+      >div:nth-child(3) {
+        >img {
+          margin: 0 15px;
+        }
+      }
+
+    }
+    .remark {
+      position: absolute;
+      bottom: 10px;
+      color: #eee;
+      font-size: 12px;
+    }
   }
 }
 </style>

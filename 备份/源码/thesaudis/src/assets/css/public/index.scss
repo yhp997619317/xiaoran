@@ -50,3 +50,421 @@ a:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 575.99px) {
+  .app-main {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden auto;
+    background: #161616;
+
+    .my-btn {
+      display: block;
+      width: 230px;
+      height: 70px;
+      text-align: center;
+      line-height: 70px;
+      font-family: font1, font2, font3;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 600;
+      border-radius: 15px;
+      background: #006c35;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        transform: translate(0, -3px);
+      }
+    }
+    .header {
+      width: 100vw;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #006c35;
+      .header-left {
+        width: 100%;
+        text-align: center;
+        > span {
+          padding-left: 0px;
+          font-size: 25px;
+          font-weight: 700;
+          &:hover {
+            color: #000000;
+          }
+          cursor: pointer;
+        }
+      }
+      .header-mid {
+        display: none;
+      }
+      .header-right {
+        display: none;
+      }
+    }
+
+    .container {
+      width: 100vw;
+      height: auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      .cont-layer1 {
+        height: 70vh;
+        width: 100%;
+        background: #006c35;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: center;
+        .cont-layer1-title {
+          width: 60%;
+          font-size: 32px;
+          font-stretch: 100%;
+          font-style: italic;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 700;
+          height: auto;
+          letter-spacing: normal;
+          line-height: 35.2px;
+        }
+        .claim-btn {
+          background: #006c35;
+          margin-top: 15px;
+          background: #161616;
+          color: #fff;
+        }
+        .img-box {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          overflow: hidden;
+          margin-top: 30px;
+          img {
+            width: 25%;
+            height: auto;
+            margin: 0 0px;
+          }
+        }
+      }
+
+      .cont-layer2 {
+        width: 100%;
+        height: 110vh;
+        background: #161616;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: center;
+        > span:nth-child(1) {
+          text-align: center;
+          width: 70%;
+          font-size: 50px;
+          font-stretch:100%;
+          font-style: italic;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 700;
+          height: auto;
+          letter-spacing: normal;
+          line-height: 50px;
+          margin-bottom: 30px;
+        }
+        > span:nth-child(3) {
+          text-align: center;
+          color: #bbb;
+          width: 85%;
+          margin: 40px 0;
+          font-size: 16px;
+          font-stretch: 100%;
+          font-style: normal;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 400;
+          height: auto;
+          letter-spacing: normal;
+          line-height: 22.4px;
+        }
+      }
+
+      .cont-layer3 {
+        width: 100%;
+        height: 200vh;
+        background: #161616;
+        display: grid;
+        grid-template-rows: repeat(5, min-content) 1fr;
+        grid-template-columns: 100%;
+        // ok
+        .grid-1 {
+          position: relative;
+          margin: 50px 0px;
+          left: calc(50% - 52.5px);
+          width: 105px;
+          grid-area: 3 / 1 / 4 / 2;
+          justify-self: start;
+          align-self: start;
+          font-size: 17px;
+          font-weight: 700;
+        }
+        // ok
+        .grid-2 {
+          position: relative;
+          margin: 0px 0px;
+          left: calc(50% - 80px);
+          grid-area: 4 / 1 / 5 / 2;
+          justify-self: start;
+          align-self: start;
+          width: 160px;
+
+          span {
+            font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+            wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+            font-size: 50px;
+            font-weight: 700;
+            height: auto;
+            letter-spacing: normal;
+            line-height: 50px;
+          }
+        }
+        // ok
+        .grid-3 {
+          position: relative;
+          margin: 40px 0px 0;
+          left: 7.5%;
+          grid-area: 5 / 1 / 6 / 2;
+          justify-self: start;
+          align-self: start;
+          width: 85%;
+          text-align: center;
+          color:#bbb;
+          font-size: 16px;
+          font-stretch: 100%;
+          font-style: normal;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 600;
+          height: auto;
+          letter-spacing:normal;
+          line-height:22.4px;
+        }
+        .grid-4 {
+          position: relative;
+          margin: 40px 0px 0;
+          left: calc(50% - 115px);
+          grid-area: 6 / 1 / 7 / 2;
+          justify-self: start;
+          align-self: start;
+        }
+        // ok
+        .grid-5 {
+          position: relative;
+          margin: 0 5px 0 0;
+          left: calc(50% - 130px);
+          grid-area: 2 / 1 / 2 / 2;
+          justify-self: start;
+          align-self: start;
+          img {
+            margin: 10px 0;
+            width: 125px;
+            height: 125px;
+          }
+        }
+        // ok
+        .grid-6 {
+          position: relative;
+          margin: 0 0 0 10px;
+          left: calc(50% + 5px);
+          grid-area: 2 / 2 / 2 / 1;
+          justify-self: start;
+          align-self: start;
+          img {
+            margin: 10px 0;
+            width: 125px;
+            height: 125px;
+          }
+        }
+        // ok
+        .grid-8 {
+          position: relative;
+          margin: 51px 0px 25px 0;
+          width: 236px;
+
+          left: calc(50% - 128px ) !important;
+          grid-area: 1 / 1 / 2 / 2;
+          justify-self: start;
+          align-self: start;
+          text-align: center;
+          font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+          wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+          font-size: 30px;
+          font-stretch: 100%;
+          font-style: italic;
+          font-variant-caps: normal;
+          font-variant-east-asian: normal;
+          font-variant-ligatures: normal;
+          font-variant-numeric: normal;
+          font-weight: 700;
+          height: auto;
+          letter-spacing: normal;
+          line-height: 30px;
+        }
+      }
+
+      .cont-layer4 {
+        width: 100%;
+        height: 400px;
+        background: #161616;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+        .line1 {
+          font-size: 48px;
+          line-height: 48px;
+          width: 70%;
+          margin-bottom: 50px;
+        }
+        .line2 {
+          width: 60%;
+          height: auto;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-around;
+          align-items: center;
+          > div {
+            font-stretch: 100%;
+            font-style: normal;
+            font-variant-caps: normal;
+            font-variant-east-asian: normal;
+            font-variant-ligatures: normal;
+            font-variant-numeric: normal;
+            font-weight: 400;
+            height: auto;
+            letter-spacing: normal;
+            text-align: center;
+            margin-bottom: 30px;
+
+            p:nth-child(1) {
+              font-size: 30px;
+              line-height: 33px;
+              color: #fff;
+            }
+            p:nth-child(2) {
+              font-size: 18px;
+              line-height: 33px;
+              color: #ccc;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .cont-layer5 {
+        width: 100%;
+        height: 350px;
+        background: #161616;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .img-box {
+          width: 100%;
+          height: 350px;
+          background: #006c35;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0;
+          position: relative;
+          > span {
+            font-size: 34px;
+            line-height: 34px;
+            width: 70%;
+            text-align: center;
+          }
+          >div {
+            margin-top: 50px;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            > span {
+              margin: 0 8px;
+            }
+          }
+          >img {
+            width: 280px;
+            height: 107px;
+            position: absolute;
+            bottom: -16%;
+            right: calc(50% - 140px);
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 100vw;
+      height: 400px;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 0;
+      margin-top: 80px;
+      .line1 {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: wfont_531ace_58938f917a1b4e66a2181c66dc63faa1,
+        wf_58938f917a1b4e66a2181c66d, orig_century_schoolbook_std;
+        position: relative;
+        > div {
+          width: 100%;
+          text-align: center;
+          margin: 20px 0;
+          span,img {
+            cursor: pointer;
+          }
+        }
+        >div:nth-child(2) {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-around;
+          align-items: center;
+          height: 160px;
+          >span {
+            margin: 0 10px;
+          }
+        }
+        >div:nth-child(3) {
+          margin-top: 0;
+          >img {
+            margin: 0 15px;
+          }
+        }
+
+      }
+      .remark {
+        position: absolute;
+        bottom: 10px;
+        color: #eee;
+        font-size: 12px;
+      }
+    }
+  }
+}
